@@ -1,0 +1,13 @@
+body {
+   background-image: url("../img/beach.gif");
+     background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+div#beachDropDown
+{
+	position: fixed;
+    top: 50%;
+    left: 50%;
+}
