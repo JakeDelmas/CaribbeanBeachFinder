@@ -44,7 +44,7 @@
                         //echo "<img src=\"".$row1["FILE_NAME"]."\" style=\"width:100%;\" alt=\"".$row["BEACH_NAME"]."\">";
 						
 					
-							echo "<div class=\"mySlides fade\">";
+							echo "<div class=\"".$row["BEACH_NAME"]." fade\">";
 						echo "<img src=\"".$row1["FILE_NAME"]."\" style=\"width:100%;\" alt=\"".$row["BEACH_NAME"]."\">";
 						echo "<div class=\"text\">".$row["BEACH_NAME"]."</div>
 							</div>";
@@ -67,6 +67,7 @@
                      }
 
                     echo "<br>";
+                    echo "<script type=\"text/javascript\"> makeSlider(".$row["BEACH_NAME"].")</script>";
                }
                }
                else
@@ -74,5 +75,6 @@
                     echo "0 results";
                }
             ?>
+
     </body>
 </html>
