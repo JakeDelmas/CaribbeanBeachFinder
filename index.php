@@ -16,7 +16,9 @@
             })();
         </script>
         <link rel="stylesheet" type="text/css" href="css/master.css">
-        <?php include './utilities/db_connect.php';?>
+        <?php
+include './utilities/db_connect.php';
+?>
     </head>
     <body background="img/beach.gif">
         <img src="img/beachfinder.gif" alt="Smiley face">
@@ -26,22 +28,18 @@
                 <select name="dd-menu-country">
                     <option></option>
                     <?php
-                        $sql = "SELECT ID, NAME FROM COUNTRIES";
-                        $result = $conn->query($sql);
+$sql    = "SELECT ID, NAME FROM COUNTRIES";
+$result = $conn->query($sql);
 
-                        if ($result->num_rows > 0)
-                        {
-                        // output data of each row
-                        while($row = $result->fetch_assoc())
-                        {
-                        	echo "<option value=\"".$row["ID"]."\">".$row["NAME"]."</option>\r\n";
-                        }
-                        }
-                        else
-                        {
-                        	echo "0 results";
-                        }
-                        ?>
+if ($result->num_rows > 0) {
+    // output data of each row
+    while ($row = $result->fetch_assoc()) {
+        echo "<option value=\"" . $row["ID"] . "\">" . $row["NAME"] . "</option>\r\n";
+    }
+} else {
+    echo "0 results";
+}
+?>
                 </select>
                 <input type="submit" value="Go">
             </form>

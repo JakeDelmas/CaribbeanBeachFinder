@@ -4,10 +4,12 @@ function makeSlider(beachname) {
 }
 
 function plusSlides(n, beachname) {
+    console.log("Naw");
   showSlides(slideIndex += n, beachname);
 }
 
 function currentSlide(n, beachname) {
+    console.log("Naw");
   showSlides(slideIndex = n, beachname);
 }
 
