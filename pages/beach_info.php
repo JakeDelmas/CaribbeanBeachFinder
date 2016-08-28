@@ -29,6 +29,7 @@
                // output data of each row
                while($row = $result->fetch_assoc())
                {
+                    echo $row["BEACH_NAME"];
                     $sql = "SELECT FILE_NAME FROM IMAGES WHERE BEACH_ID = \"" .$row["ID"]. "\"";
                     $result2 = $conn->query($sql);
 
@@ -37,10 +38,10 @@
 
                      while($row1 = $result2->fetch_assoc())
                      {
-                        echo "<img src=\"".$row1["FILE_NAME"]."\" height=\" alt=\"".$row["BEACH_NAME"]."\">";
+                        echo "<img src=\"".$row1["FILE_NAME"]."\" style=\"width:100%;\" alt=\"".$row["BEACH_NAME"]."\">";
                      }
                      }
-                    echo $row["BEACH_NAME"];
+
                     echo "<br>";
                }
                }
