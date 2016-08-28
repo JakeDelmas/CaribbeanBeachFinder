@@ -42,7 +42,7 @@ if ($result->num_rows > 0) {
 
 
                 echo "<div class=\"" . $row["BEACH_NAME"] . " fade\">";
-                echo "<img src=\"" . $row1["FILE_NAME"] . "\" style=\"width:100%;\" alt=\"" . $row["BEACH_NAME"] . "\">";
+                echo "<img src=\"" . $row1["FILE_NAME"] . "\" style=\"width:100%;height:600px;\" alt=\"" . $row["BEACH_NAME"] . "\">";
                 echo "<div class=\"text\">" . $row["BEACH_NAME"] . "</div>
 							</div>";
 
@@ -52,7 +52,7 @@ if ($result->num_rows > 0) {
 							<a class=\"next\" onclick=\"plusSlides(1, '" . $row["BEACH_NAME"] . "')\">&#10095;</a>
 
 						</div>
-						<br>
+					
 
 						<div style=\"text-align:center\">";
             for ($dots = 1; $dots <= $num_of_rows; $dots++) {

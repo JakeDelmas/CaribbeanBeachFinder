@@ -1,4 +1,4 @@
-body {
+body#homePage {
    background-image: url("../img/beach.gif");
      background-size: cover;
     background-repeat: no-repeat;
@@ -16,7 +16,7 @@ div#beachDropDown
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
+  max-width: 100%;
   position: relative;
   margin: auto;
 }

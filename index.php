@@ -20,7 +20,7 @@
 include './utilities/db_connect.php';
 ?>
     </head>
-    <body background="img/beach.gif">
+    <body id="homePage">
         <img src="img/beachfinder.gif" alt="Smiley face">
         <!--Populate drop-down menu with country choices-->
         <div id="beachDropDown">
