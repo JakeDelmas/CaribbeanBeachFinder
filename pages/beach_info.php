@@ -50,8 +50,8 @@
 							
 						
                      }
-					 	echo "<a class=\"prev\" onclick=\"plusSlides(-1)\">&#10094;</a>
-							<a class=\"next\" onclick=\"plusSlides(1)\">&#10095;</a>
+					 	echo "<a class=\"prev\" onclick=\"plusSlides(-1, \"".$row["BEACH_NAME"]."\")\">&#10094;</a>
+							<a class=\"next\" onclick=\"plusSlides(1, \"".$row["BEACH_NAME"]."\")\">&#10095;</a>
 							
 						</div>
 						<br>
@@ -59,7 +59,7 @@
 						<div style=\"text-align:center\">";
 						for ($dots = 1; $dots <= $num_of_rows; $dots++) 
 						{
-							echo "<span class=\"dot\" onclick=\"currentSlide(".$dots.")\"></span> ";
+							echo "<span class=\"dot\" onclick=\"currentSlide(".$dots.", \"".$row["BEACH_NAME"]."\")\"></span> ";
 						} 
 
 						echo "</div>";
