@@ -24,7 +24,6 @@
             $country_id = $_POST['dd-menu-country'];
             $sql = "SELECT BEACH_NAME, ID FROM BEACHES WHERE COUNTRY_ID = \"" .$country_id. "\"";
             $result = $conn->query($sql);
-			$dots=1;
                if ($result->num_rows > 0)
                {
                // output data of each row
@@ -33,7 +32,7 @@
                     echo $row["BEACH_NAME"];
                     $sql = "SELECT FILE_NAME FROM IMAGES WHERE BEACH_ID = \"" .$row["ID"]. "\"";
                     $result2 = $conn->query($sql);
-					$num_of_rows=$result2->num_rows;
+					$num_of_rows=($result2->num_rows);
                      if ($result2->num_rows > 0)
                      {
 					
@@ -44,7 +43,7 @@
                         //echo "<img src=\"".$row1["FILE_NAME"]."\" style=\"width:100%;\" alt=\"".$row["BEACH_NAME"]."\">";
 						
 					
-							echo "<div class=\"".$row["BEACH_NAME"]." fade\">";
+					    echo "<div class=\"".$row["BEACH_NAME"]." fade\">";
 						echo "<img src=\"".$row1["FILE_NAME"]."\" style=\"width:100%;\" alt=\"".$row["BEACH_NAME"]."\">";
 						echo "<div class=\"text\">".$row["BEACH_NAME"]."</div>
 							</div>";
@@ -64,10 +63,17 @@
 						} 
 
 						echo "</div>";
-                     }
+
 
                     echo "<br>";
-                    echo "<script type=\"text/javascript\"> makeSlider(".$row["BEACH_NAME"].")</script>";
+
+                    echo "<script type=\"text/javascript\"> makeSlider(\"".$row["BEACH_NAME"]."\")</script>";
+                }
+                                     else
+                                     {
+                                          echo "0 results";
+                                     }
+
                }
                }
                else

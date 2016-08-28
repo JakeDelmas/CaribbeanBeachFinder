@@ -1,5 +1,5 @@
+var slideIndex = 1;
 function makeSlider(classname) {
-    var slideIndex = 1;
     showSlides(slideIndex, classname);
 }
 
