@@ -21,7 +21,7 @@
     <body>
         <?php
             $country_id = $_POST['dd-menu-country'];
-            $sql = "SELECT BEACH_NAME FROM BEACHES WHERE COUNTRY_ID = \"" .$country_id. "\"";
+            $sql = "SELECT BEACH_NAME, ID FROM BEACHES WHERE COUNTRY_ID = \"" .$country_id. "\"";
             $result = $conn->query($sql);
 
                if ($result->num_rows > 0)
@@ -29,13 +29,24 @@
                // output data of each row
                while($row = $result->fetch_assoc())
                {
-                echo $row["BEACH_NAME"];
-                echo "<br>";
+                    $sql = "SELECT FILE_NAME FROM IMAGES WHERE BEACH_ID = \"" .$row["ID"]. "\"";
+                    $result2 = $conn->query($sql);
+
+                     if ($result2->num_rows > 0)
+                     {
+
+                     while($row1 = $result2->fetch_assoc())
+                     {
+                        echo "<img src=\"".$row1["FILE_NAME"]."\" height=\" alt=\"".$row["BEACH_NAME"]."\">";
+                     }
+                     }
+                    echo $row["BEACH_NAME"];
+                    echo "<br>";
                }
                }
                else
                {
-                echo "0 results";
+                    echo "0 results";
                }
             ?>
     </body>
