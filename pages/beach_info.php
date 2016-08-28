@@ -22,9 +22,6 @@
 	<body>
 	<?php
 	    echo $_POST['dd-menu-country'];
-	    //$sql = "SELECT BEACHES FROM " . $var_value .;
-        //$result = $conn->query($sql);
-
     ?>
 	</body>
 </html>
