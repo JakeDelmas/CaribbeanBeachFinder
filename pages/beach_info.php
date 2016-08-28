@@ -37,8 +37,6 @@
                {
                 echo "0 results";
                }
-
-               //echo $countries
             ?>
     </body>
 </html>

@@ -41,8 +41,6 @@
                         {
                         	echo "0 results";
                         }
-
-                        echo $countries
                         ?>
                 </select>
                 <input type="submit" value="Go">
