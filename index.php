@@ -26,7 +26,7 @@
                 <select name="dd-menu-country">
                     <option></option>
                     <?php
-                        $sql = "SELECT NAME FROM COUNTRIES";
+                        $sql = "SELECT ID, NAME FROM COUNTRIES";
                         $result = $conn->query($sql);
 
                         if ($result->num_rows > 0)
@@ -34,7 +34,7 @@
                         // output data of each row
                         while($row = $result->fetch_assoc())
                         {
-                        	echo "<option value=\"".$row["NAME"]."\">".$row["NAME"]."</option>\r\n";
+                        	echo "<option value=\"".$row["ID"]."\">".$row["NAME"]."</option>\r\n";
                         }
                         }
                         else

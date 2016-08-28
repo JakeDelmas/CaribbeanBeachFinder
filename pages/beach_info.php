@@ -20,8 +20,8 @@
     </head>
     <body>
         <?php
-            $country_name = strtoupper($_POST['dd-menu-country']);
-            $sql = "SELECT BEACH_NAME FROM " .$country_name;
+            $country_id = $_POST['dd-menu-country'];
+            $sql = "SELECT BEACH_NAME FROM BEACHES WHERE COUNTRY_ID = \"" .$country_id. "\"";
             $result = $conn->query($sql);
 
                if ($result->num_rows > 0)
