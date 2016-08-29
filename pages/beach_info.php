@@ -27,6 +27,7 @@ $country_id = $_POST['dd-menu-country'];
 $sql        = "SELECT BEACH_NAME, ID FROM BEACHES WHERE COUNTRY_ID = \"" . $country_id . "\"";
 $result     = $conn->query($sql);
 if ($result->num_rows > 0) {
+echo "<div class=\"webpage-container\">";
     // output data of each row
     while ($row = $result->fetch_assoc()) {
         echo $row["BEACH_NAME"];
@@ -34,6 +35,7 @@ if ($result->num_rows > 0) {
         $result2     = $conn->query($sql);
         $num_of_rows = ($result2->num_rows);
         if ($result2->num_rows > 0) {
+
 
             echo "<div class=\"slideshow-container\">";
 
@@ -67,6 +69,7 @@ if ($result->num_rows > 0) {
             echo "<script type=\"text/javascript\"> makeSlider(\"" . $row["BEACH_NAME"] . "\")</script>";
         }
     }
+    echo "</div>";
 }
 ?>
 
