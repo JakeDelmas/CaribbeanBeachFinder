@@ -26,7 +26,7 @@ include './utilities/db_connect.php';
         <div id="beachDropDown">
             <form action="./pages/beach_info.php" method="post">
                 <select name="dd-menu-country">
-                    <option></option>
+                    <option>Select Country</option>
                     <?php
 $sql    = "SELECT ID, NAME FROM COUNTRIES";
 $result = $conn->query($sql);
