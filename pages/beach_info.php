@@ -1,6 +1,7 @@
 <?php 
 require("../utilities/db_connect.php");
-require("../inc/header.php"); 
+require("../inc/header.php");
+echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"../css/master.css\">";
 ?>
 <body>
 <?php
