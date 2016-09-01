@@ -27,7 +27,7 @@ echo "<div class=\"webpage-container\">";
 
                 echo "<div class=\"" . $row["BEACH_NAME"] . " fade\">";
                 echo "<img src=\"" . $row1["FILE_NAME"] . "\" alt=\"" . $row["BEACH_NAME"] . "\">";
-                echo "<div class=\"text\">" . $row["BEACH_NAME"] . "</div>
+                //echo "<div class=\"text\">" . $row["BEACH_NAME"] . "</div>
 							</div>";
 
 
