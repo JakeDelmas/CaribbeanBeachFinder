@@ -23,10 +23,20 @@ div#beachDropDown
 }
 
 .slideshow-container {
-  max-width: 100%;
+/*max-width: 100%;*/
+    width: 100vw;
+    height: 100vh;
   position: relative;
   margin: auto;
 }
+
+.slideshow-container img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
 
 .textarea {
   position: absolute;
