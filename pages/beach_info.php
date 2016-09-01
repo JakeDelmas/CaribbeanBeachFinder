@@ -12,7 +12,7 @@ if ($result->num_rows > 0) {
 echo "<div class=\"webpage-container\">";
     // output data of each row
     while ($row = $result->fetch_assoc()) {
-        echo $row["BEACH_NAME"];
+        //echo $row["BEACH_NAME"];
         $sql         = "SELECT FILE_NAME FROM IMAGES WHERE BEACH_ID = \"" . $row["ID"] . "\"";
         $result2     = $conn->query($sql);
         $num_of_rows = ($result2->num_rows);
