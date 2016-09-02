@@ -1,3 +1,4 @@
+<?php require("utilities/db_connect.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -32,4 +33,4 @@
 
         <!--Font Awesome Icons CDN  -->
         <script src="https://use.fontawesome.com/bf1f685128.js"></script>
-    </head>    
+    </head>
