@@ -32,8 +32,4 @@
 
         <!--Font Awesome Icons CDN  -->
         <script src="https://use.fontawesome.com/bf1f685128.js"></script>
-    </head>
-<body>
-<div class="container-fluid">
-
-    
+    </head>    

@@ -2,7 +2,8 @@
 require("utilities/db_connect.php");
 require("inc/header.php"); 
 ?>
-<div id="homePage">
+<body id="homePage">
+<div class="container-fluid">
 
     <div class="row">
         <div class="col-sm-12">
@@ -11,8 +12,8 @@ require("inc/header.php");
     </div>
     
     <!--Populate drop-down menu with country choices-->
-    <div class="row row-centered">
-        <div class="col-sm-12 col-centered" id="beachDropDown">
+    <div class="row">
+        <div class="col" id="beachDropDown">
 
             <form action="./pages/beach_info.php" method="post">
                 <select name="dd-menu-country">
@@ -32,9 +33,10 @@ require("inc/header.php");
                     ?>
                 </select>
                 <input type="submit" value="Go">
+               
             </form>
 
         </div>
     </div>
-</div>
+</div><!-- End Bootstrp Container-fluid div -->
 <?php require("inc/footer.php"); ?>
