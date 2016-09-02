@@ -26,11 +26,8 @@
 
         <!-- Custom Style Sheet (Ours) -->
         <link rel="stylesheet" type="text/css" href="css/master.css">
-		<script type="text/javascript" src="../js/slider.js"></script>
+		<script type="text/javascript" src="js/slider.js"></script>
 
         <!-- JQuery minified-->
         <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
-
-        <!--Font Awesome Icons CDN  -->
-        <script src="https://use.fontawesome.com/bf1f685128.js"></script>
     </head>
