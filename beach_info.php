@@ -25,7 +25,7 @@ require("inc/header.php");
                         //echo "<img src=\"".$row1["FILE_NAME"]."\" style=\"width:100%;\" alt=\"".$row["BEACH_NAME"]."\">";
 
 
-                        echo "<div class=\"" . $row["BEACH_NAME"] . " fade\">";
+                        echo "<div class=\"" . $row["BEACH_NAME"] . " customfade\">";
                         echo "<img src=\"" . $row1["FILE_NAME"] . "\" alt=\"" . $row["BEACH_NAME"] . "\">";
                         //echo "<div class=\"text\">" . $row["BEACH_NAME"] . "</div>
                                     echo "</div>";
