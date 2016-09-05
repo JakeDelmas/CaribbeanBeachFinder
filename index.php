@@ -16,7 +16,7 @@ require("inc/header.php");
     <div class="row">
         <div class="col-sm-4 text-center" id="beachDropDown">
             <form action="./beach_info.php" method="post">
-                <select class="selectpicker" name="dd-menu-country">
+                <select class="selectpicker" data-width="70%" name="dd-menu-country">
                     <option value="0" >Find Your Beach</option>
                     <?php
                         $sql    = "SELECT ID, NAME FROM COUNTRIES";

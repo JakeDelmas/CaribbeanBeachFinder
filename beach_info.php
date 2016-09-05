@@ -4,12 +4,73 @@ require("inc/header.php");
 
 <body>
 <div class="container-fluid">
+<?php
+    $country_id = $_POST['dd-menu-country'];
+    $sql        = "SELECT NAME FROM COUNTRIES WHERE ID = \"" . $country_id . "\"";
+    $result     = $conn->query($sql);
+    if ($result) {
+        while ($row = $result->fetch_assoc()) {
+            $current_country = $row["NAME"];
+        }
+    }
+
+?>
+    <div class="row">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="index.php">Caribbean Beach Finder: <?php echo $current_country; ?></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <!-- Social Menu Links -->
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+              </ul>
+
+              <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Change Location <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <?php
+                        $sql = "SELECT ID, NAME FROM COUNTRIES";
+                        $result = $conn->query($sql);
+
+                        if ($result->num_rows > 0) {
+                            // output data of each row
+                            while ($row = $result->fetch_assoc()) {
+                                echo "<li><a href=\"#\" data-id=\"$row[ID]\">".$row["NAME"]."</a></li>";
+                            }
+                        } else {
+                            echo "<li>No Other Islands Currently Supported</li>";
+                        }
+                    ?>
+                  </ul>
+                </li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+    </div>
+
+<div class="row">
+
     <?php
         $country_id = $_POST['dd-menu-country'];
         $sql        = "SELECT BEACH_NAME, ID FROM BEACHES WHERE COUNTRY_ID = \"" . $country_id . "\"";
         $result     = $conn->query($sql);
         if ($result->num_rows > 0) {
-        echo "<div class=\"webpage-container\">";
+        echo "<div class=\"col-sm-12 webpage-container\">";
             // output data of each row
             while ($row = $result->fetch_assoc()) {
                 //echo $row["BEACH_NAME"];
@@ -38,12 +99,14 @@ require("inc/header.php");
                                 </div>
                             
 
-                                <div style=\"text-align:center\">";
+                                <div class=\"col-sm-12 text-center\" style=\"text-align:center\">
+                                    <div class=\"col-sm-1 dot-container\">";
                     for ($dots = 1; $dots <= $num_of_rows; $dots++) {
                         echo "<span class=\"dot\" onclick=\"currentSlide(" . $dots . ", '" . $row["BEACH_NAME"] . "')\"></span> ";
                     }
 
-                    echo "</div>";
+                    echo "</div>
+                            </div>";
 
 
                     echo "<br>";
@@ -54,4 +117,5 @@ require("inc/header.php");
             echo "</div>";
         }
         ?>
+</div>
 </div>
