@@ -63,8 +63,14 @@ require("inc/header.php");
         </nav>
     </div>
 
-<div class="row">
+<div class="row" id="additionalInformation" style="display: none; ">
 
+</div>	
+
+
+	
+<div class="row" id="sliders">
+<button type="button" class="btn btn-info" onclick="displayAddInfo()">Info</button>
     <?php
         $country_id = $_POST['dd-menu-country'];
         $sql        = "SELECT BEACH_NAME, ID FROM BEACHES WHERE COUNTRY_ID = \"" . $country_id . "\"";
@@ -119,3 +125,39 @@ require("inc/header.php");
         ?>
 </div>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+
+  <script>
+  
+  function displayAddInfo() {
+    
+	
+	document.getElementById("additionalInformation").innerHTML = "<button type=\"button\" class=\"btn btn-info\" onclick=\"removeAddInfo()\"><-- Back</button> <h1> Test Beach additional Info</h1> ";
+	 
+ $("#sliders").fadeOut("slow");	
+	$("#additionalInformation").fadeIn("slow");
+	 
+	 
+}
+
+
+  
+  </script>
+  
+  
+  <script>
+    function removeAddInfo() {
+    
+	
+	//document.getElementById("additionalInformation").innerHTML = "";
+	 
+ $("#additionalInformation").fadeOut("slow");	
+	$("#sliders").fadeIn("slow");
+	 
+	 
+}
+  
+  </script>
