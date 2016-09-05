@@ -7,17 +7,17 @@ require("inc/header.php");
 
     <div class="row">
         <div class="col-sm-12">
-            <img src="img/beachfinder.gif" alt="Smiley face">
+            <!--<img src="img/beachfinder.gif" alt="Smiley face">-->
+            <h1 class="text-center">CARIBBEAN BEACH FINDER</h1>
         </div>
     </div>
     
     <!--Populate drop-down menu with country choices-->
     <div class="row">
-        <div class="col" id="beachDropDown">
-
+        <div class="col-sm-4 text-center" id="beachDropDown">
             <form action="./beach_info.php" method="post">
-                <select name="dd-menu-country">
-                    <option>Select Country</option>
+                <select class="selectpicker" name="dd-menu-country">
+                    <option value="0" >Find Your Beach</option>
                     <?php
                         $sql    = "SELECT ID, NAME FROM COUNTRIES";
                         $result = $conn->query($sql);
@@ -32,7 +32,7 @@ require("inc/header.php");
                         }
                     ?>
                 </select>
-                <input type="submit" value="Go">
+                <a type="submit" class="btn btn-default btn-sm" href="#"><i class="fa fa-search fa-lg"></i></a>
                
             </form>
 

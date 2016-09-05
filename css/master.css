@@ -10,8 +10,25 @@ body#homePage {
     
 }
 
+body#homePage h1 {
+  color: #FFF;
+  font-weight: bolder;
+}
+
+.overlay {
+  position: absolute;
+  background-color: rgba(255,255,255,0.4);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
 div#beachDropDown
 {
+  background-color: rgba(0,0,0,0.6);
+  border-radius: 25px;
+  padding: 2%;
 	position: fixed;
   top: 50%;
   left: 50%;
@@ -88,6 +105,14 @@ div#beachDropDown
 
 
 /* The dots/bullets/indicators */
+
+.dot-container {
+  margin: 0 auto;
+  padding: 1% 0px;
+  background-color: rgba(0,0,0,0.7);
+  border-radius: 25px;
+}
+
 .dot {
   cursor:pointer;
   height: 13px;
