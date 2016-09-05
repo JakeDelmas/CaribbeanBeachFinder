@@ -30,7 +30,6 @@ div#beachDropDown
 
 /* Slideshow container */
 .webpage-container {
-  max-width: 100%;
   position: relative;
 }
 
@@ -97,6 +96,11 @@ a.prev:hover, a.next:hover {
 
 
 /* The dots/bullets/indicators */
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
 
 .dot-container {
   margin: 0 auto;

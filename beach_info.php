@@ -99,8 +99,8 @@ require("inc/header.php");
                                 </div>
                             
 
-                                <div class=\"col-sm-12 text-center\" style=\"text-align:center\">
-                                    <div class=\"col-sm-1 dot-container\">";
+                                <div class=\"row clear text-center\">
+                                    <div class=\"col-sm-2 col-centered dot-container\">";
                     for ($dots = 1; $dots <= $num_of_rows; $dots++) {
                         echo "<span class=\"dot\" onclick=\"currentSlide(" . $dots . ", '" . $row["BEACH_NAME"] . "')\"></span> ";
                     }
