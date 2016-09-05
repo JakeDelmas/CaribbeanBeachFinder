@@ -162,3 +162,9 @@ require("inc/header.php");
 }
   
   </script>
+  
+  
+  <?php 
+require("inc/footer.php"); 
+?>
+
