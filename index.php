@@ -32,7 +32,7 @@ require("inc/header.php");
                         }
                     ?>
                 </select>
-                <a type="submit" class="btn btn-default btn-sm" href="#"><i class="fa fa-search fa-lg"></i></a>
+                <button type="submit" class="btn btn-default btn-sm" href="#"><i class="fa fa-search fa-lg"></i></button>
                
             </form>
 
