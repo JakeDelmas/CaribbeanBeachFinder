@@ -15,15 +15,6 @@ body#homePage h1 {
   font-weight: bolder;
 }
 
-.overlay {
-  position: absolute;
-  background-color: rgba(255,255,255,0.4);
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
 div#beachDropDown
 {
   background-color: rgba(0,0,0,0.6);
@@ -48,7 +39,7 @@ div#beachDropDown
     width: 100%;
     max-height: 100vh;
     position: relative;
-  padding-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 .slideshow-container img {
