@@ -63,9 +63,7 @@ require("inc/header.php");
         </nav>
     </div>
 
-<div class="row" id="additionalInformation" style="display: none; ">
 
-</div>	
 
 
 	
@@ -124,6 +122,9 @@ require("inc/header.php");
         }
         ?>
 </div>
+  <div class="row" id="additionalInformation" style="display: none; ">
+
+  </div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
