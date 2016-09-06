@@ -68,7 +68,6 @@ require("inc/header.php");
 
 	
 <div class="row" id="sliders">
-<button type="button" class="btn btn-info" onclick="displayAddInfo()">Info</button>
     <?php
         $country_id = $_POST['dd-menu-country'];
         $sql        = "SELECT BEACH_NAME, ID FROM BEACHES WHERE COUNTRY_ID = \"" . $country_id . "\"";
@@ -85,7 +84,8 @@ require("inc/header.php");
 
 
                     echo "<div class=\"slideshow-container\">";
-
+					echo "<center><h1 id=\"beachTitle\">".$row["BEACH_NAME"]."</h1></center>";
+					echo "<button type=\"button\" class=\"btn btn-info\" onclick=\"displayAddInfo(".$row["ID"].",'".$row["BEACH_NAME"]."')\">Additional Info</button>";
                     while ($row1 = $result2->fetch_assoc()) {
                         //echo "<img src=\"".$row1["FILE_NAME"]."\" style=\"width:100%;\" alt=\"".$row["BEACH_NAME"]."\">";
 
@@ -133,10 +133,10 @@ require("inc/header.php");
 
   <script>
   
-  function displayAddInfo() {
+  function displayAddInfo(id,beachName) {
     
 	
-	document.getElementById("additionalInformation").innerHTML = "<button type=\"button\" class=\"btn btn-info\" onclick=\"removeAddInfo()\"><-- Back</button> <h1> Test Beach additional Info</h1> ";
+	document.getElementById("additionalInformation").innerHTML = "<button type=\"button\" class=\"btn btn-info\" onclick=\"removeAddInfo()\"><-- Back</button> <h1> Test Beach additional Info for: <br> Beach ID: "+id+"<br> Beach Name: "+beachName+"</h1> ";
 	 
  $("#sliders").fadeOut("slow");	
 	$("#additionalInformation").fadeIn("slow");

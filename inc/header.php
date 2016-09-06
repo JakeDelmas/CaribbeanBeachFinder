@@ -37,6 +37,9 @@
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.0/js/bootstrap-select.min.js"></script>
 
-        <!--Font Awesome Icons CDN  -->
+        <!-- Font Awesome Icons CDN  -->
         <script src="https://use.fontawesome.com/bf1f685128.js"></script>
+		
+		 <!-- Google Web Fonts - List each font needed  -->
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Tangerine">
     </head>
