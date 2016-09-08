@@ -64,6 +64,7 @@ require("inc/header.php");
         </nav>
     </div>
 
+<div class="top-buffer"></div>
 
 <div class="row">
 
@@ -92,23 +93,18 @@ require("inc/header.php");
 
     <!--  Bootstrap Carousel  -->
 
-    <div class="col-sm-12 col-lg-6">
+    <div class="col-sm-12 col-lg-6 col-lg-offset-1">
 
       <div id="my-slider" class="carousel slide" data-ride="carousel">
 
-        <!--  Indicators  dot nav   -->
-        <ol class="carousel-indicators">
-          <li data-target="#my-slider" data-slide-to="0" class="active"></li>
-          <li data-target="#my-slider" data-slide-to="1"></li>
-          <li data-target="#my-slider" data-slide-to="2"></li>
-        </ol>
-
-         <!--  Wrapper to hold all slides  -->
-         <div class="carousel-inner" role="listbox">
-
+         
+        <!--  Wrapper to hold all slides  -->
+        <div class="carousel-inner" role="listbox">  
 
         <?php
+          $indicator_count = 0;
           $active_flag = 1;
+          $active_flag2 = 1;
           $country_id = $_POST['dd-menu-country'];
           $sql2        = "SELECT BEACH_NAME, ID FROM BEACHES WHERE COUNTRY_ID = \"" . $country_id . "\"";
           $result2     = $conn->query($sql2);
@@ -118,14 +114,32 @@ require("inc/header.php");
 
               // Now get file name for images of specific beaches
 
-              $sql3 = "SELECT FILE_NAME FROM IMAGES WHERE BEACH_ID = \"" . $row2["ID"] . "\"";
+              $sql3 = "SELECT FILE_NAME,BEACH_ID FROM IMAGES WHERE BEACH_ID = \"" . $row2["ID"] . "\"";
               $result3 = $conn->query($sql3);
+              
               if ($result3) {
-                
-                //load first image per beach ONLY into Carousel
+                // Store number of indicators will be needed
+                $indicator_count = 2;
+                //<!--  Indicators  dot nav   -->
+                if ($indicator_count > 0) {
+                  echo "<ol class=\"carousel-indicators\">";
+                    for ($i=0; $i < $indicator_count ; $i++) { 
+                      if ($active_flag2) {
+                        echo "<li data-target=\"#my-slider\" data-slide-to=\"" . $i . "\" class=\"active\"></li>";
+                        $active_flag2 = 0;
+                      }else{
+                        echo "<li data-target=\"#my-slider\" data-slide-to=\"" . $i . "\" class=\"\"></li>";
+                      }
+                      
+                    }
+                  echo "</ol>";
+                }
+
+                //Will only load first image per beach ONLY into Carousel
                 $row3 = $result3->fetch_assoc();
+
+                //If no images, break
                 if (!$row3["FILE_NAME"]) {
-                  //If no images, break
                   break;
                 }
                 
@@ -157,7 +171,12 @@ require("inc/header.php");
         </div> <!-- Ends carousel-inner -->
         
         
+        
+        <?php
+          
 
+        ?>
+        
 
         
 

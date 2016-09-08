@@ -56,7 +56,10 @@ h1#beachTitle
 
 
 
-
+/**************** Helper Classes ******************/
+.top-buffer { 
+  margin-top:5%; 
+}
 
 
 
