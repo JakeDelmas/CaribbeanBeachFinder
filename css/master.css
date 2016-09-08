@@ -38,16 +38,50 @@ h1#beachTitle
   position: relative;
 }
 
+/* Side Nav */
+.beach-name-nav {
+  max-height: 300px !important;
+  overflow-y: scroll; 
+}
+
+#my-slider .item {
+  max-height: 350px;
+  overflow: hidden;
+}
+
+#my-slider .item img {
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+/************************************Possibly no longer needed********************************/
+
 .slideshow-container {
 /*max-width: 100%;*/
     width: 100%;
-    max-height: 100vh;
+    max-height: 300px;
     position: relative;
     padding-bottom: 10px;
 }
 
 .slideshow-container img {
     width: 100%;
+}
+
+.info-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #FFF;
 }
 
 
@@ -95,11 +129,6 @@ a.prev:hover, a.next:hover {
   text-decoration: none;
 }
 
-
-/* Caption text */
-
-
-
 /* The dots/bullets/indicators */
 
 .col-centered{
@@ -146,3 +175,6 @@ a.prev:hover, a.next:hover {
   from {opacity: .4} 
   to {opacity: 1}
 }
+
+
+/************************************************************************?
