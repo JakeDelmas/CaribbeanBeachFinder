@@ -82,8 +82,6 @@ require("inc/header.php");
     <?php
     // Query to load all beaches in country into sidebar
 
-
-      $country_id = $_POST['dd-menu-country'];
       $sql        = "SELECT BEACH_NAME, ID FROM BEACHES WHERE COUNTRY_ID = \"" . $country_id . "\"";
       $result     = $conn->query($sql);
       if ($result) {
@@ -107,56 +105,29 @@ require("inc/header.php");
         <div class="carousel-inner" role="listbox">  
 
         <?php
-          $indicator_count = 0;
           $active_flag = 1;
-          $active_flag2 = 1;
           $country_id = $_POST['dd-menu-country'];
-          $sql2        = "SELECT BEACH_NAME, ID FROM BEACHES WHERE COUNTRY_ID = \"" . $country_id . "\"";
+          $sql2        = "SELECT i.BEACH_ID, i.FILE_NAME, b.BEACH_NAME FROM IMAGES i, BEACHES b WHERE i.BEACH_ID = b.ID AND b.COUNTRY_ID = \"". $country_id . "\" GROUP BY i.BEACH_ID";
           $result2     = $conn->query($sql2);
           if ($result2) {
 
+            $indicator_count = $result2->num_rows;
+                
+                
+            //<!--  Indicators  dot nav   -->
+            if ($indicator_count > 0) {
+              echo "<ol class=\"carousel-indicators\">";
+                for ($i=0; $i < $indicator_count ; $i++) { 
+                  if ($i === 0) {
+                    echo "<li data-target=\"#my-slider\" data-slide-to=\"" . $i . "\" class=\"active\"></li>";
+                  }else{
+                    echo "<li data-target=\"#my-slider\" data-slide-to=\"" . $i . "\" class=\"\"></li>";
+                  }
+                }
+              echo "</ol>";
+            }
+
             while ($row2 = $result2->fetch_assoc()) {
-
-              // Now get file name for images of specific beaches
-
-              $sql3 = "SELECT FILE_NAME,BEACH_ID FROM IMAGES WHERE BEACH_ID = \"" . $row2["ID"] . "\"";
-              $result3 = $conn->query($sql3);
-              
-              $sql4 = "SELECT DISTINCT BEACH_ID FROM IMAGES";
-              $result4 = $conn->query($sql4);
-              
-              if ($result3) {
-
-                if ($result4) {
-                  // Store number of indicators will be needed
-                  $indicator_count = $result4->num_rows;
-                }else{
-                  $indicator_count = 0;
-                }
-                
-                
-                
-                //<!--  Indicators  dot nav   -->
-                if ($indicator_count > 0) {
-                  echo "<ol class=\"carousel-indicators\">";
-                    for ($i=0; $i < $indicator_count ; $i++) { 
-                      if ($active_flag2) {
-                        echo "<li data-target=\"#my-slider\" data-slide-to=\"" . $i . "\" class=\"active\"></li>";
-                        $active_flag2 = 0;
-                      }else{
-                        echo "<li data-target=\"#my-slider\" data-slide-to=\"" . $i . "\" class=\"\"></li>";
-                      }
-                    }
-                  echo "</ol>";
-                }
-
-                //Will only load first image per beach ONLY into Carousel
-                $row3 = $result3->fetch_assoc();
-
-                //If no images, break
-                if (!$row3["FILE_NAME"]) {
-                  break;
-                }
                 
                 //<!--  Each slide is represented by one of these divs  -->
 
@@ -168,7 +139,7 @@ require("inc/header.php");
                 }
 
                 echo "
-                  <img src=\"" . $row3["FILE_NAME"] . "\" alt=\"beach1\">
+                  <img src=\"" . $row2["FILE_NAME"] . "\" alt=\"beach1\">
                   <div class=\"carousel-caption\">
                     <h3>" . $row2["BEACH_NAME"] . "</h3>
                     <p>About Beach 1</p>
@@ -180,20 +151,8 @@ require("inc/header.php");
                 
               }
             }
-          }
-
         ?>
         </div> <!-- Ends carousel-inner -->
-        
-        
-        
-        <?php
-          
-
-        ?>
-        
-
-        
 
         <!--  Controls next and prev  -->
         <a class="left carousel-control" href="#my-slider" role="button" data-slide="prev">
@@ -265,4 +224,3 @@ require("inc/header.php");
   <?php 
 require("inc/footer.php"); 
 ?>
-
