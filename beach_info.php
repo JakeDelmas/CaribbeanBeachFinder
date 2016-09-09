@@ -122,9 +122,19 @@ require("inc/header.php");
               $sql3 = "SELECT FILE_NAME,BEACH_ID FROM IMAGES WHERE BEACH_ID = \"" . $row2["ID"] . "\"";
               $result3 = $conn->query($sql3);
               
+              $sql4 = "SELECT DISTINCT BEACH_ID FROM IMAGES";
+              $result4 = $conn->query($sql4);
+              
               if ($result3) {
-                // Store number of indicators will be needed
-                $indicator_count = 2;
+
+                if ($result4) {
+                  // Store number of indicators will be needed
+                  $indicator_count = $result4->num_rows;
+                }else{
+                  $indicator_count = 0;
+                }
+                
+                
                 
                 //<!--  Indicators  dot nav   -->
                 if ($indicator_count > 0) {
