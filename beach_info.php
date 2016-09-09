@@ -1,4 +1,9 @@
-<?php 
+<?php
+//Refirect to homepage if no country selected to prevent blank beach_info page from showing up
+if (!isset($_POST['dd-menu-country'])) {
+  header("Location: index.php");
+}
+
 require("inc/header.php"); 
 ?>
 
@@ -120,6 +125,7 @@ require("inc/header.php");
               if ($result3) {
                 // Store number of indicators will be needed
                 $indicator_count = 2;
+                
                 //<!--  Indicators  dot nav   -->
                 if ($indicator_count > 0) {
                   echo "<ol class=\"carousel-indicators\">";
@@ -130,7 +136,6 @@ require("inc/header.php");
                       }else{
                         echo "<li data-target=\"#my-slider\" data-slide-to=\"" . $i . "\" class=\"\"></li>";
                       }
-                      
                     }
                   echo "</ol>";
                 }
